@@ -130,7 +130,7 @@
 .pagination {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     width: 100%;
     padding: 1rem;
@@ -139,7 +139,7 @@
 .pagination button {
     padding: .25rem .5rem;
     margin: .25rem 0;
-    font-size: .625rem;
+    font-size: .900rem;
     color: #fff;
     background-color: #6c79db;
     border: none;
