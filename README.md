@@ -1,5 +1,3 @@
 # Trilha JS Developer - Pokedex
 
-## Desafio detalhes Pokemon
-
-### Luciano Decio Neto
+* Desafio detalhes Pokemon: Criar funcionalidade para visualizar detalhes dos pokemons.
