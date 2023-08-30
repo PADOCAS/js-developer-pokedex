@@ -40,14 +40,19 @@
     <dialog id="dialogPokemonDetail" class="pokemonDetailDialogModal">
         <div id="pnlDialogPokemon">
             <div class="divDialogPokemonTop">
-                <button id="btnClosedDialogPokemonDetail">Voltar (ESC)</button>
+                <div class="divBotoesCoracaoDialogPokemon">
+                    <button id="btnClosedDialogPokemonDetail">Voltar (ESC)</button>
+                    <img src="assets/img/coracaoFav.png" alt="Adicionar aos Favoritos" />
+                </div>
                 <div class="divCabecalhoDialogPokemonDetail">
                     <div class="divTituloTiposDialogPokemonDetail">
                         <div>
                             <h1 id="txtTitDialogPokemonNome"></h1>
                         </div>
                         <div>
-                            <!-- TODOOOOOOOOOOOOO tiposs -->
+                            <ol id="listTypesDialogPokemonDetail" class="types">
+                                <!-- Tipos dos Pokemons aqui -->
+                            </ol>
                         </div>
                     </div>
 
@@ -55,7 +60,11 @@
                         <h4 id="txtIdDialogPokemon"></h4>
                     </div>
                 </div>
-                <p>Conteúdo do diálogo</p>
+                <div class="divImgDialogPokemonDetail">
+                    <div class="divChargedImagemDialogPokemonDetail" id="imgDialogPokemonDetail">
+
+                    </div>
+                </div>
             </div>
             <div class="divDialogPokemonBottom">
 

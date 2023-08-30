@@ -34,19 +34,43 @@ function addEventoClickShowModal(event) {
 function chargedDialogPokemon(id) {
     if (id !== null) {
         if (id !== undefined) {
+            //Nome:
             let txtTitDialogPokemonNome = document.getElementById('txtTitDialogPokemonNome')
             txtTitDialogPokemonNome.textContent = listPokemon.get(id).name;
 
+            //Id:
             let txtIdDialogPokemon = document.getElementById('txtIdDialogPokemon')
             txtIdDialogPokemon.textContent = "#" + listPokemon.get(id).number;
 
+            //Tipos:
+            let listTypesDialog = document.getElementById('listTypesDialogPokemonDetail');
+            listTypesDialog.innerHTML = convertTypesPokemonToLiDialog(listPokemon.get(id));
+
+            //Cor Fundo:
             while (dialogPokemonDetail.classList.length > 0) {
                 dialogPokemonDetail.classList.remove(dialogPokemonDetail.classList.item(0));
             }
 
             dialogPokemonDetail.classList.add("pokemonDetailDialogModal", listPokemon.get(id).type);
+
+            //Imagem Pokemon:
+            let imgDialogPokemonDetail = document.getElementById('imgDialogPokemonDetail');
+            imgDialogPokemonDetail.innerHTML = convertImgPokemonToDialog(listPokemon.get(id))
+
         }
     }
+}
+
+function convertTypesPokemonToLiDialog(pokemon) {
+    return `
+        ${pokemon.types.map((type) => `<li class="type ${type}">${type}</li>`).join('')}
+    `;
+}
+
+function convertImgPokemonToDialog(pokemon) {
+    return `
+        <img src="${pokemon.photo}" alt="${pokemon.name}">
+    `;
 }
 
 
