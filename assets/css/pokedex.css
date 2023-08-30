@@ -239,6 +239,7 @@
 }
 
 .divChargedImagemDialogPokemonDetail {
+    /* Colocar imagem ultrapassando div abaixo */
     z-index: 2;
     display: flex;
     flex-direction: row;
