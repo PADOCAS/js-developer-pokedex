@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pokedex: 1ª Geração</title>
+    <title>Pokedex: 1ª Generation</title>
 
     <!-- Normalize CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
@@ -24,7 +24,7 @@
 
 <body>
     <section class="content">
-        <h1>Pokedex: 1ª Geração</h1>
+        <h1>Pokedex: 1ª Generation</h1>
 
         <ol id="pokemonList" class="pokemons">
             <!-- ..... Pokemons here ..... -->
@@ -32,7 +32,7 @@
 
         <div class="pagination">
             <button id="loadMoreButton" type="button">
-                Próximos
+                Next
             </button>
         </div>
     </section>
@@ -41,7 +41,7 @@
         <div id="pnlDialogPokemon">
             <div class="divDialogPokemonTop">
                 <div class="divBotoesCoracaoDialogPokemon">
-                    <button id="btnClosedDialogPokemonDetail">Voltar (ESC)</button>
+                    <button id="btnClosedDialogPokemonDetail">Back (ESC)</button>
                     <img src="assets/img/coracaoFav.png" alt="Adicionar aos Favoritos" />
                 </div>
                 <div class="divCabecalhoDialogPokemonDetail">
@@ -67,7 +67,16 @@
                 </div>
             </div>
             <div class="divDialogPokemonBottom">
-
+                <div class="divMenuDialogPokemonBottom">
+                    <!-- Menu About Default -->
+                    <a id="linkMenuAboutDialog" class="abaAtiva">About</a>
+                    <a id="linkMenuBaseStatsDialog">Base Stats</a>
+                    <a id="linkMenuEvolutionDialog">Evolution</a>
+                    <a id="linkMenuMovesDialog">Moves</a>
+                </div>
+                <div class="divDetalhePokemonBottom">
+                    <!-- ... Detalhes dos pokemons para cada Menu ... -->
+                </div>
             </div>
         </div>
     </dialog>

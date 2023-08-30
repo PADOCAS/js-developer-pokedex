@@ -6,7 +6,6 @@ const dialogPokemonDetail = document.getElementById('dialogPokemonDetail')
 const maxRecords = 151
 const limit = 10
 let offset = 0;
-var pokemonDetail;
 
 function addEventClickDialogPokemon() {
     let listLinksPokemonDetail = document.getElementsByClassName('linkPokemonDetail');

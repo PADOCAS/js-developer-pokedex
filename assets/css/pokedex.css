@@ -152,7 +152,7 @@
     cursor: pointer;
 }
 
-/* Dialog:  */
+/* Dialog cabeçalho:  */
 .pokemonDetailDialogModal {
     border-radius: 1rem;
     border: none;
@@ -261,8 +261,42 @@
     margin-right: 0.2rem;
     font-size: .625rem;
     border-radius: 1rem;
+    /* Faz um brilho contornando o elemento */
     filter: brightness(1.1);
     text-align: center;
+}
+
+/* Dialog Menu: */
+.divDialogPokemonBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.divMenuDialogPokemonBottom {
+    margin-top: 27px;
+    padding: 5px 5px 0px 5px;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 12px;
+    /* Cor padrão cinza meio escurinho */
+    color: darkgray;
+}
+
+.abaAtiva, .divMenuDialogPokemonBottom a:hover {
+    border-bottom: 2px solid #0000FF;
+    font-weight: bold;
+    color: #000000;
+}
+
+.divMenuDialogPokemonBottom a {
+    cursor: pointer;
+}
+
+.divDetalhePokemonBottom {
+    flex: 10;
 }
 
 @media screen and (min-width: 380px) {

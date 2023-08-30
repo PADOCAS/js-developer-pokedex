@@ -6,12 +6,20 @@ function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
     pokemon.number = pokeDetail.id
     pokemon.name = pokeDetail.name
+    pokemon.weight = pokeDetail.weight
+    pokemon.height = pokeDetail.height
 
     const types = pokeDetail.types.map((typeSlot) => typeSlot.type.name)
     const [type] = types
 
     pokemon.types = types
     pokemon.type = type
+
+    //Abilidades:
+    pokemon.abilities = pokeDetail.abilities.map((ability) => ability.ability.name)    
+
+    //Espécies (URL) -> Vamos precisar buscar as espécies que são separadas por lingua, vamos considerar apenas a "en"
+    pokemon.urlspecies = pokeDetail.species.url
 
     pokemon.photo = pokeDetail.sprites.other.dream_world.front_default
 
