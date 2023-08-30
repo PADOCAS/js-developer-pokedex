@@ -297,6 +297,7 @@
 
 .divDetalhePokemonBottom {
     flex: 10;
+    padding: 7px;
 }
 
 @media screen and (min-width: 380px) {
