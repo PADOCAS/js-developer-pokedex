@@ -302,6 +302,7 @@
 }
 
 /* Zoom Pokemons Dialog: */
+/* Zoom About: */
 .divDetalheAboutPokemonBottom {
     display: flex;
     flex-direction: column;
@@ -334,6 +335,43 @@
     font-size: 12px;
     color: #000000;
     text-transform: capitalize;
+    flex: 1;
+}
+
+/* Zoom stats */
+.divDetalheStatsPokemonBottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.divDetalheStatsSuperior {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+}
+
+.divDetalheZoomStatsTitColuns {
+    font-size: 12px;
+    color: darkgray;
+    width: 72px;
+    flex: 1;
+}
+
+.divDetalheZoomStatsValueColuns {
+    font-size: 12px;
+    color: #000000;
+    text-transform: capitalize;
+    text-align: right;
+}
+
+/* Progress bar: */
+.progressBarZoom {
+    height: 10px;
+    margin-left: 20px;
+    width: 150px;
 }
 
 @media screen and (min-width: 380px) {

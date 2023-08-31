@@ -74,7 +74,47 @@ function convertDivPokemonDetalheAbout(pokemon) {
 function convertDivPokemonDetalheStats(pokemon) {
     return `
     <div class="divDetalheStatsPokemonBottom">
-        <span class="name">Stats Rei!</span>
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">HP</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.hp}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.hp}" max="160" />
+        </div>
+
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">Attack</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.atack}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.atack}" max="160" />
+        </div>
+
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">Defense</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.defense}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.defense}" max="160" />
+        </div>
+
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">Sp Attack</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.special_attack}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.special_attack}" max="160" />
+        </div>
+
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">Sp Defense</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.special_defense}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.special_defense}" max="160" />
+        </div>
+
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">Speed</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.speed}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.speed}" max="160" />
+        </div>
+
+        <div class="divDetalheStatsSuperior">
+            <span class="divDetalheZoomStatsTitColuns">Total</span>
+            <span class="divDetalheZoomStatsValueColuns">${pokemon.base_status.total}</span>
+            <progress class="progressBarZoom" value="${pokemon.base_status.total}" max="960" />
+        </div>
     </div>
     `
 }
