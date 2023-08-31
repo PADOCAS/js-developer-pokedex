@@ -14,6 +14,7 @@
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/> </a> 
 </p>
 
+
 <h3 align="left">Segue um GIF com a versão final do projeto pronto:</h3>
 
 ![Texto alternativo](./assets/sample/pokedex_padocas_31082023.gif)
