@@ -3,7 +3,7 @@
 * <b>Desafio:</b>
 * Criar funcionalidade para visualizar detalhes dos pokemons, onde o usuário deve clicar em algum pokemon listado e poder ver os dados específicos dele, listando informações que foram armazenadas através da API: <a href="https://pokeapi.co/" target="_blank" rel="noreferrer">POKEAPI</a>.
 
-* Exercicío faz parte do SanSantander Bootcamp 2023 - Fullstack Java+Angular, onde foi teve como base esse projeto inicial: <a href="https://www.github.com/digitalinnovationone/js-developer-pokedex/" target="_blank" rel="noreferrer">digitalinnovationone/js-developer-pokedex - Projeto do Renan.</a>
+* Exercicío faz parte do SanSantander Bootcamp 2023 - Fullstack Java+Angular, onde foi teve como base esse projeto inicial: <a href="https://www.github.com/digitalinnovationone/js-developer-pokedex/" target="_blank" rel="noreferrer">digitalinnovationone/js-developer-pokedex</a> Desenvolvido pelo <a href="https://github.com/RenanJPaula/" target="_blank" rel="noreferrer">Rennan Johannsen</a>.
 
 * Segue link do BootCamp para quem tiver interesse: <a href="https://web.dio.me/track/santander-bootcamp-2023-fullstack-java-angular/" target="_blank" rel="noreferrer">FullStack Java+Angular</a>
 
