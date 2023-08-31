@@ -39,12 +39,33 @@ function addEventoClickZoomStats(event) {
 function convertDivPokemonDetalheAbout(pokemon) {
     return `
     <div class="divDetalheAboutPokemonBottom">
-        <div>
-            <span class="name">${pokemon.name}</span>
+        <div class="divDetalheAboutSuperior">
+            <span class="divDetalheZoomTitColuns">Species</span>
+            <span class="divDetalheZoomValueColuns">${pokemon.specieGenus}</span>
         </div>
 
-        <div>
-        <span class="name">Teste About</span>
+        <div class="divDetalheAboutSuperior">
+            <span class="divDetalheZoomTitColuns">Height</span>
+            <span class="divDetalheZoomValueColuns">${pokemon.height / 10} cm</span>
+        </div>
+
+        <div class="divDetalheAboutSuperior">
+            <span class="divDetalheZoomTitColuns">Weight</span>
+            <span class="divDetalheZoomValueColuns">${pokemon.weight / 10} kg</span>
+        </div>
+
+        <div class="divDetalheAboutSuperior">
+            <span class="divDetalheZoomTitColuns">Abilities</span>
+            <span class="divDetalheZoomValueColuns">${pokemon.abilities.map((ability) => ability).join(', ')}</span>
+        </div>
+
+        <div class="divDetalheAboutSuperior">
+            <span class="divDetalheZoomTitGroupColuns">Breeding</span>
+        </div>
+
+        <div class="divDetalheAboutSuperior">
+            <span class="divDetalheZoomTitColuns">Egg Groups</span>
+            <span class="divDetalheZoomValueColuns">${pokemon.egg_groups.map((egg) => egg).join(', ')}</span>
         </div>
     </div>
     `
