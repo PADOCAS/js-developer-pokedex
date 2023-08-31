@@ -7,6 +7,81 @@ const maxRecords = 151
 const limit = 10
 let offset = 0;
 
+function addEventClickMenuDetalhePokemonBottomDialog() {
+    let linkMenuAboutDialog = document.getElementById('linkMenuAboutDialog');
+    let linkMenuBaseStatsDialog = document.getElementById('linkMenuBaseStatsDialog');
+
+    linkMenuAboutDialog.addEventListener("click", addEventoClickZoomAbout)
+    linkMenuBaseStatsDialog.addEventListener("click", addEventoClickZoomStats)
+}
+
+function addEventoClickZoomAbout(event) {
+    setAbaAtivaZoomDetalhesPokemonDialog("about");
+
+    let divDetalhePokemonBottom = document.getElementById('divDetalhePokemonBottom');
+    divDetalhePokemonBottom.innerHTML = convertDivPokemonDetalheAbout(pokemonSelect);
+
+    // Evitar que o link execute o comportamento padrão (navegar para outra página)                
+    event.preventDefault();
+}
+
+function addEventoClickZoomStats(event) {
+    //Converte Zoom detalhes pokemons Dialog:
+    setAbaAtivaZoomDetalhesPokemonDialog("stats");
+
+    let divDetalhePokemonBottom = document.getElementById('divDetalhePokemonBottom');
+    divDetalhePokemonBottom.innerHTML = convertDivPokemonDetalheStats(pokemonSelect);
+
+    // Evitar que o link execute o comportamento padrão (navegar para outra página)                
+    event.preventDefault();
+}
+
+function convertDivPokemonDetalheAbout(pokemon) {
+    return `
+    <div class="divDetalheAboutPokemonBottom">
+        <div>
+            <span class="name">${pokemon.name}</span>
+        </div>
+
+        <div>
+        <span class="name">Teste About</span>
+        </div>
+    </div>
+    `
+}
+
+function convertDivPokemonDetalheStats(pokemon) {
+    return `
+    <div class="divDetalheStatsPokemonBottom">
+        <span class="name">Stats Rei!</span>
+    </div>
+    `
+}
+
+function setAbaAtivaZoomDetalhesPokemonDialog(link) {
+    if (link !== null) {
+        if (link !== undefined) {
+            let linkMenuAboutDialog = document.getElementById('linkMenuAboutDialog');
+            let linkMenuBaseStatsDialog = document.getElementById('linkMenuBaseStatsDialog');
+
+            //Retira class dos menus:
+            while (linkMenuAboutDialog.classList.length > 0) {
+                linkMenuAboutDialog.classList.remove(linkMenuAboutDialog.classList.item(0));
+            }
+
+            while (linkMenuBaseStatsDialog.classList.length > 0) {
+                linkMenuBaseStatsDialog.classList.remove(linkMenuBaseStatsDialog.classList.item(0));
+            }
+
+            if (link === "about") {
+                linkMenuAboutDialog.classList.add("abaAtiva");
+            } else if (link === "stats") {
+                linkMenuBaseStatsDialog.classList.add("abaAtiva");
+            }
+        }
+    }
+}
+
 function addEventClickDialogPokemon() {
     let listLinksPokemonDetail = document.getElementsByClassName('linkPokemonDetail');
 
@@ -19,45 +94,51 @@ function addEventClickDialogPokemon() {
 }
 
 function addEventoClickShowModal(event) {
-    // Coloque aqui o código que será executado quando o link for clicado
-
     dialogPokemonDetail.showModal();
-    // Setar informações no Dialog, passando por parâmetro o ID do pokemon:
-    chargedDialogPokemon(Number(event.currentTarget.id.split("_")[1]));
+    //Seta o Pokemon Selecionado para trabalhar com ele depois:
+    pokemonSelect = listPokemon.get(Number(event.currentTarget.id.split("_")[1]));
 
+    // Setar informações no Dialog:
+    chargedDialogPokemon();
+
+    //Evento Close Dialog 'click':
     addEventClickClosedDialogPokemon();
+
+    //Converte Zoom detalhes pokemons Dialog:
+    setAbaAtivaZoomDetalhesPokemonDialog("about");
+    let divDetalhePokemonBottom = document.getElementById('divDetalhePokemonBottom');
+    divDetalhePokemonBottom.innerHTML = convertDivPokemonDetalheAbout(pokemonSelect);
+
+    //Adicionar evento para 'click' nas abas detalhes:
+    addEventClickMenuDetalhePokemonBottomDialog();
+
     // Evitar que o link execute o comportamento padrão (navegar para outra página)                
     event.preventDefault();
 }
 
-function chargedDialogPokemon(id) {
-    if (id !== null) {
-        if (id !== undefined) {
-            //Nome:
-            let txtTitDialogPokemonNome = document.getElementById('txtTitDialogPokemonNome')
-            txtTitDialogPokemonNome.textContent = listPokemon.get(id).name;
+function chargedDialogPokemon() {
+    //Nome:
+    let txtTitDialogPokemonNome = document.getElementById('txtTitDialogPokemonNome')
+    txtTitDialogPokemonNome.textContent = pokemonSelect.name;
 
-            //Id:
-            let txtIdDialogPokemon = document.getElementById('txtIdDialogPokemon')
-            txtIdDialogPokemon.textContent = "#" + listPokemon.get(id).number;
+    //Id:
+    let txtIdDialogPokemon = document.getElementById('txtIdDialogPokemon')
+    txtIdDialogPokemon.textContent = "#" + pokemonSelect.number;
 
-            //Tipos:
-            let listTypesDialog = document.getElementById('listTypesDialogPokemonDetail');
-            listTypesDialog.innerHTML = convertTypesPokemonToLiDialog(listPokemon.get(id));
+    //Tipos:
+    let listTypesDialog = document.getElementById('listTypesDialogPokemonDetail');
+    listTypesDialog.innerHTML = convertTypesPokemonToLiDialog(pokemonSelect);
 
-            //Cor Fundo:
-            while (dialogPokemonDetail.classList.length > 0) {
-                dialogPokemonDetail.classList.remove(dialogPokemonDetail.classList.item(0));
-            }
-
-            dialogPokemonDetail.classList.add("pokemonDetailDialogModal", listPokemon.get(id).type);
-
-            //Imagem Pokemon:
-            let imgDialogPokemonDetail = document.getElementById('imgDialogPokemonDetail');
-            imgDialogPokemonDetail.innerHTML = convertImgPokemonToDialog(listPokemon.get(id))
-
-        }
+    //Cor Fundo:
+    while (dialogPokemonDetail.classList.length > 0) {
+        dialogPokemonDetail.classList.remove(dialogPokemonDetail.classList.item(0));
     }
+
+    dialogPokemonDetail.classList.add("pokemonDetailDialogModal", pokemonSelect.type);
+
+    //Imagem Pokemon:
+    let imgDialogPokemonDetail = document.getElementById('imgDialogPokemonDetail');
+    imgDialogPokemonDetail.innerHTML = convertImgPokemonToDialog(pokemonSelect)
 }
 
 function convertTypesPokemonToLiDialog(pokemon) {

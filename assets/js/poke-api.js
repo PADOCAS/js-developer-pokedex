@@ -1,6 +1,7 @@
 
 const pokeApi = {}
 const listPokemon = new Map();
+var pokemonSelect = null;
 
 function convertPokeApiDetailToPokemon(pokeDetail) {
     const pokemon = new Pokemon()
