@@ -171,6 +171,7 @@
     color: #FFFFFF;
     font-size: 0.7rem;
     padding: 3px;
+    cursor: pointer;
 }
 
 #btnClosedDialogPokemonDetail:focus {
