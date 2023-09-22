@@ -14,6 +14,7 @@
   <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="50" height="50"/> </a> 
 </p>
 
+Segue link para o Projeto: <a href="https://js-developer-pokedex-n55s3h7v5-padocas.vercel.app/" target="_blank" rel="noreferrer">Projeto Pokedex<a>
 
 <h3 align="left">Segue um GIF com a versão final do projeto pronto:</h3>
 
